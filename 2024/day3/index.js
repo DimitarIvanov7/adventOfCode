@@ -1,8 +1,8 @@
 import { input } from './input.js';
 
-const findDigits = (str) => {
-  let digit1 = '';
-  let digit2 = '';
+const findNumbers = (str) => {
+  let number1 = '';
+  let number2 = '';
 
   let idx = 0;
 
@@ -11,25 +11,20 @@ const findDigits = (str) => {
   }
 
   idx++;
-  //   console.log(str[idx]);
 
   while (str[idx] !== ',') {
-    digit1 += str[idx];
+    number1 += str[idx];
     idx++;
   }
 
   idx++;
 
-  //   console.log('secoND', str[idx]);
-
   while (str[idx] !== ')') {
-    digit2 += str[idx];
+    number2 += str[idx];
     idx++;
   }
 
-  //   console.log(digit1, ', ', digit2);
-
-  return [digit1, digit2];
+  return [number1, number2];
 };
 
 const checkCondition = (str) => {
@@ -44,9 +39,9 @@ const main = (input) => {
 
     if (condition === undefined) {
       if (!go) return acc;
-      const [digit1, digit2] = findDigits(curr);
+      const [number1, number2] = findNumbers(curr);
 
-      return acc + parseInt(digit1) * parseInt(digit2);
+      return acc + parseInt(number1) * parseInt(number2);
     } else {
       go = condition;
       return acc;

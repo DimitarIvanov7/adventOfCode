@@ -1,5 +1,7 @@
 import { input } from './input.js';
 
+const testinput = [];
+
 const parseString = (input) => {};
 
 const main = (data) => {
